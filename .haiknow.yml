@@ -1,0 +1,6 @@
+# HAiKnow project opt-in marker.
+#
+# Commit this file at the project root. Its presence and schema version make
+# HAiKnow automatic behavior follow the project across machines and teammates.
+# Project knowledge remains in haiknow-doc/; HAiKnow runtime stays global.
+schema_version: 1
