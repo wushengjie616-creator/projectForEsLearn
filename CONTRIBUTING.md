@@ -2,6 +2,14 @@
 
 Thank you for helping improve HAiKnow's Spanish reading and writing platform.
 
+## Governance and permissions
+
+This is a public repository: anyone may inspect or fork the source and propose a change through an issue or pull request. A proposal does not grant write access and does not become part of the official project unless a designated maintainer accepts it.
+
+Only the repository owner and people explicitly invited as maintainers may approve or merge changes into `main`. The current code owner is recorded in [`.github/CODEOWNERS`](.github/CODEOWNERS). Do not ask for credentials, invitation codes, deployment secrets, or direct repository access in an issue or pull request.
+
+All changes to `main`, including maintainer changes, must go through the repository's branch rules and required CI checks. Repository collaborators must not bypass those controls or force-push the protected branch.
+
 ## Before changing code
 
 1. Create a focused branch from the current `main` branch.

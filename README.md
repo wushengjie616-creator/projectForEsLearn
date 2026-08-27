@@ -4,7 +4,7 @@
 
 项目使用 Next.js App Router、TypeScript、Supabase PostgreSQL 和 DeepSeek API。用户通过个人邀请码登录，学习进度、个性化材料、练习和答题记录保存在 Supabase；DeepSeek Key 只由服务端读取，不进入浏览器。
 
-> 开源状态：软件代码与原创项目文档采用 [MIT License](LICENSE)，第三方阅读原文及其学习加工不由 MIT 统一覆盖，必须同时遵守 [NOTICE](NOTICE.md) 与逐篇许可台账。GitHub 仓库仍为 Private；完成剩余发布门禁并取得所有者对可见性变更的单独确认后才能公开。
+> 开源状态：GitHub 仓库已经公开。软件代码与原创项目文档采用 [MIT License](LICENSE)，第三方阅读原文及其学习加工不由 MIT 统一覆盖，必须同时遵守 [NOTICE](NOTICE.md) 与逐篇许可台账。任何人都可以查看、Fork 和提交改进建议；只有仓库所有者及明确受邀的维护者可以决定哪些修改进入受保护的 `main`，具体规则见 [CONTRIBUTING](CONTRIBUTING.md)。
 
 ## 功能
 
@@ -72,7 +72,7 @@ Next.js Server Actions / Route Handlers
 5. 不要把 `.env.local`、`.local/`、生产日志或真实用户数据提交到 Git。
 6. 用户没有授权付费验收时，不运行 `verify:custom-learning-e2e`，因为它会真实调用 DeepSeek。
 7. 不要重复执行已经成功执行过的 `create table` 迁移；先在 Supabase Table Editor 或 SQL Editor 检查表是否存在。
-8. 任何把 GitHub 仓库从 Private 改为 Public 的操作，都必须在许可证、第三方内容和完整 Git 历史检查完成后，再获得仓库所有者的明确确认。
+8. 仓库可见性、维护者名单、分支规则或安全策略的变更必须获得仓库所有者明确授权；不能因为仓库公开就向外部贡献者授予直接写入权限。
 
 ### 1. 准备条件
 
@@ -399,9 +399,9 @@ npm.cmd run build
 
 参考：[Instituto Cervantes 课程规划](https://cvc.cervantes.es/ENSENANZA/biblioteca_ele/plan_curricular/default.htm)、[Creative Commons 许可证](https://creativecommons.org/share-your-work/cclicenses/)、[Project Gutenberg 西语读物](https://www.gutenberg.org/ebooks/subject/4582)。
 
-## 开源发布门禁
+## 公开仓库持续门禁
 
-把 GitHub 仓库设为 Public 之前必须完成：
+仓库已经公开。下列门禁用于持续保证公开源码、私有部署凭据以及维护者决策权之间的边界：
 
 - [x] 项目所有者选择 MIT 软件许可证并添加根目录 `LICENSE`；
 - [x] 在 README 和 `NOTICE.md` 中明确软件许可与第三方学习内容许可相互独立；
@@ -415,7 +415,8 @@ npm.cmd run build
 - [x] 添加不需要生产密钥的 Windows GitHub Actions CI，自动运行测试、类型检查、Lint 和生产构建；
 - [ ] 完成第二个真实邀请码的交叉数据隔离验收；
 - [x] 运行测试、类型检查、Lint、生产依赖审计和生产构建；
-- [ ] 仓库所有者检查 GitHub **Settings → Danger Zone → Change repository visibility** 的影响，并单独确认公开操作。
+- [x] 仓库所有者已检查可见性影响并明确确认将仓库设为 Public；
+- [x] 公开仓库采用 Pull Request、CI、`CODEOWNERS` 与 `main` 规则集治理，只有所有者和明确受邀的维护者可以决定合并。
 
 MIT 只覆盖仓库中的软件代码与未另行声明的原创项目文档；第三方学习内容继续适用其各自许可与说明。具体边界见 [NOTICE.md](NOTICE.md) 和 [内容来源台账](haiknow-doc/docs/content-sources.md)。
 
