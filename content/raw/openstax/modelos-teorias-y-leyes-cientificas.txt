@@ -1,0 +1,31 @@
+TITLE: Modelos, teorías y leyes científicas
+BOOK: Física universitaria volumen 1
+SECTION: 1.1 El alcance y la escala de la Física (selected consecutive prose passage)
+AUTHORS: William Moebs; Samuel J. Ling; Jeff Sanny
+PUBLISHER: OpenStax, Rice University
+PUBLICATION_DATE: 2021-09-28
+SOURCE: https://openstax.org/books/f%C3%ADsica-universitaria-volumen-1/pages/1-1-el-alcance-y-la-escala-de-la-fisica
+LICENSE: Creative Commons Attribution 4.0 International (CC BY 4.0)
+REQUIRED_ATTRIBUTION: Acceso gratuito en https://openstax.org/books/f%C3%ADsica-universitaria-volumen-1/pages/1-introduccion
+RETRIEVED_AT: 2026-08-26
+EDITORIAL_STATE: Exact consecutive prose from the section; the intervening figure and caption excluded; no wording changed.
+
+Un modelo es una representación de algo que a menudo es demasiado difícil (o imposible) de mostrar directamente. Aunque un modelo esté justificado por las pruebas experimentales, solo es preciso para describir ciertos aspectos de un sistema físico. Un ejemplo es el modelo de Bohr de los átomos de un solo electrón, en el que el electrón se imagina orbitando el núcleo, de forma análoga a como los planetas orbitan el Sol.
+
+No podemos observar las órbitas de los electrones directamente, pero la imagen mental sirve para explicar algunas de las observaciones que podemos hacer, como la emisión de luz de los gases calientes (espectros atómicos). Sin embargo, otras observaciones muestran que la imagen del modelo de Bohr no es realmente el aspecto de los átomos. El modelo es "erróneo", pero sigue siendo útil para algunos fines. Los físicos utilizan los modelos para diversos fines.
+
+Por ejemplo, los modelos permiten a los físicos analizar un escenario y realizar un cálculo, o bien pueden utilizarse para representar una situación en forma de simulación informática. Sin embargo, en última instancia, los resultados de estos cálculos y simulaciones deben comprobarse por otros medios, es decir, por la observación y la experimentación.
+
+La palabra teoría tiene un significado diferente para los científicos que el que suele tener en la conversación cotidiana. En particular, para un científico, una teoría no es lo mismo que una "conjetura" o una "idea" o incluso una "hipótesis". La frase "es solo una teoría" podría carecer de sentido y ser una tontería para los científicos, porque la ciencia se basa en la noción de teorías.
+
+Para un científico, una teoría es una explicación comprobable de los patrones de la naturaleza apoyada en pruebas científicas y verificada en múltiples ocasiones por varios grupos de investigadores. Algunas teorías incluyen modelos que permiten visualizar los fenómenos, mientras que otras no. La teoría de la gravedad de Newton, por ejemplo, no requiere ningún modelo o imagen mental, porque podemos observar los objetos directamente con nuestros propios sentidos.
+
+La teoría cinética de los gases, en cambio, es un modelo en el que se considera que un gas está compuesto por átomos y moléculas. Los átomos y las moléculas son demasiado pequeños para ser observados directamente con nuestros sentidos, por lo que los imaginamos mentalmente para entender lo que los instrumentos nos dicen sobre el comportamiento de los gases.
+
+Aunque los modelos solo pretenden describir con precisión ciertos aspectos de un sistema físico, una teoría debe describir todos los aspectos de cualquier sistema que entre en su ámbito de aplicación. En particular, cualquier consecuencia comprobable de una teoría debería verificarse experimentalmente. Si un experimento demuestra que una consecuencia de una teoría es falsa, entonces la teoría se descarta o se modifica convenientemente (por ejemplo, limitando su ámbito de aplicación).
+
+Una ley utiliza un lenguaje conciso para describir un patrón generalizado en la naturaleza apoyado por pruebas científicas y experimentos repetidos. A menudo, una ley puede expresarse en forma de una única ecuación matemática. Las leyes y las teorías son similares en el sentido de que ambas son afirmaciones científicas que resultan de una hipótesis probada y están respaldadas por pruebas científicas.
+
+Sin embargo, la designación de ley suele reservarse para un enunciado conciso y muy general que describe fenómenos de la naturaleza, como la ley de que la energía se conserva durante cualquier proceso, o la segunda ley del movimiento de Newton, que relaciona la fuerza (F), la masa (m) y la aceleración (a) mediante la sencilla ecuación F=ma. Una teoría, en cambio, es una declaración menos concisa del comportamiento observado.
+
+Por ejemplo, la teoría de la evolución y la teoría de la relatividad no pueden expresarse de forma suficientemente concisa para ser consideradas leyes. La mayor diferencia entre una ley y una teoría es que una teoría es mucho más compleja y dinámica. Una ley describe una sola acción, mientras que una teoría explica todo un grupo de fenómenos relacionados.
