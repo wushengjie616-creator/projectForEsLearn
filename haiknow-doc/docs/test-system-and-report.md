@@ -38,7 +38,7 @@
 | 资源边界 | 通过 | 不存在的阅读详情返回 404 |
 | API 未认证边界 | 通过 | 释义、材料生成、练习生成、答题提交四类 POST 均返回 401 |
 | 本地秘密文件 | 通过 | `.env.local`、`.local/invite-users.json`、`.local/invite-codes.json` 均被 Git 忽略且未跟踪；公开模板为空 |
-| Git/GitHub 公开前审计 | 通过 | 当前非私有文件与全部可达提交未发现真实高熵凭据；邀请码字面量只存在测试夹具；远端仅 `origin/main`、无标签，GitHub 仓库仍为 Private 且 Actions 无运行记录 |
+| Git/GitHub 公开前审计 | 通过 | 当前非私有文件与全部可达提交未发现真实高熵凭据；邀请码字面量只存在测试夹具；GitHub 仓库仍为 Private，Draft PR #1 的首轮 Windows CI 成功，日志未命中凭据模式 |
 | Supabase 真实链路 | 通过 | CRUD、探针清理、邀请码登录、保存、回读、冲突拒绝、原记录恢复均为 True |
 
 ## 风险与缺口

@@ -406,7 +406,7 @@ npm.cmd run build
 - [x] 项目所有者选择 MIT 软件许可证并添加根目录 `LICENSE`；
 - [x] 在 README 和 `NOTICE.md` 中明确软件许可与第三方学习内容许可相互独立；
 - [x] 将公开上游的 `src/config/invite-users.json` 重置为空注册表；本机哈希与明文只在 Git 忽略的 `.local/`，生产哈希通过加密 `INVITE_USERS_JSON` 注入；
-- [x] 扫描当前非私有文件、全部可达提交、远端分支及 GitHub Actions；未发现真实密钥、`.env.local`、邀请码明文或用户数据，Actions 当前无运行记录；
+- [x] 扫描当前非私有文件、全部可达提交、远端分支及首轮 GitHub Actions 日志；未发现真实密钥、`.env.local`、邀请码明文或用户数据，首轮 CI 已通过；
 - [x] 项目所有者确认现有提交作者姓名与邮箱可以公开，无需重写作者历史；
 - [x] 检查 24 篇材料的逐篇归属、ShareAlike、Project Gutenberg 地域边界和 OpenStax 指定归属，并保留逐篇台账；
 - [x] 关闭 3 篇 OpenStax 材料的 DeepSeek 能力，并在页面显示、链接 OpenStax 原始说明；
