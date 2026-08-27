@@ -4,6 +4,7 @@ import {
   findInviteUser,
   hashInviteCode,
   normalizeInviteCode,
+  resolveInviteUsers,
   type InviteUser,
 } from "./invite-code";
 
@@ -39,5 +40,34 @@ describe("findInviteUser", () => {
     expect(findInviteUser("ES-A1B2-C3D4-E5F6-7890-ABCD-EF12", [
       { ...activeUser, active: false },
     ])).toBeNull();
+  });
+});
+
+describe("resolveInviteUsers", () => {
+  const registry = (user: InviteUser) => JSON.stringify({ version: 1, users: [user] });
+  const privateUser = { ...activeUser, id: "a19418f1-a62c-40fa-9f5a-bc7e8791c36a", label: "私有文件" };
+  const environmentUser = { ...activeUser, id: "7d1283ab-e3bf-47c4-81a3-544cff0e2fc2", label: "生产环境" };
+
+  it("prefers the production environment registry over local and bundled sources", () => {
+    expect(resolveInviteUsers({
+      environmentRegistry: registry(environmentUser),
+      privateFileRegistry: registry(privateUser),
+      bundledRegistry: { version: 1, users: [activeUser] },
+    })).toEqual([environmentUser]);
+  });
+
+  it("uses the ignored private registry when the environment value is blank", () => {
+    expect(resolveInviteUsers({
+      environmentRegistry: "  ",
+      privateFileRegistry: registry(privateUser),
+      bundledRegistry: { version: 1, users: [] },
+    })).toEqual([privateUser]);
+  });
+
+  it("fails closed when the selected private source is malformed", () => {
+    expect(() => resolveInviteUsers({
+      privateFileRegistry: "not-json",
+      bundledRegistry: { version: 1, users: [activeUser] },
+    })).toThrow("Invalid invite registry JSON");
   });
 });

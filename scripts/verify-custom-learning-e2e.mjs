@@ -60,7 +60,7 @@ const supabaseUrl = required(
 );
 const supabaseKey = required(localEnv.SUPABASE_SECRET_KEY, "SUPABASE_SECRET_KEY");
 const sessionSecret = required(localEnv.INVITE_SESSION_SECRET, "INVITE_SESSION_SECRET");
-const registry = JSON.parse(readFileSync(resolve(root, "src/config/invite-users.json"), "utf8"));
+const registry = JSON.parse(readFileSync(resolve(root, ".local/invite-users.json"), "utf8"));
 const user = registry.users.find((candidate) => candidate.active);
 if (!user) throw new Error("No active invite user is configured");
 const cookie = sessionCookie(user.id, sessionSecret);

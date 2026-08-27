@@ -3,7 +3,13 @@ param(
     [ValidateLength(1, 60)]
     [string]$Label,
 
-    [string]$ProjectRoot
+    [string]$ProjectRoot,
+
+    [switch]$ReplaceExisting,
+
+    [switch]$ResetPublicTemplate,
+
+    [switch]$Quiet
 )
 
 $ErrorActionPreference = 'Stop'
@@ -53,20 +59,31 @@ function Get-Sha256Hex {
 }
 
 $resolvedRoot = [System.IO.Path]::GetFullPath($ProjectRoot)
-$registryPath = Join-Path $resolvedRoot 'src\config\invite-users.json'
+$registryTemplatePath = Join-Path $resolvedRoot 'src\config\invite-users.json'
 $privateDirectory = Join-Path $resolvedRoot '.local'
-$privatePath = Join-Path $privateDirectory 'invite-codes.json'
+$privateRegistryPath = Join-Path $privateDirectory 'invite-users.json'
+$privateCodesPath = Join-Path $privateDirectory 'invite-codes.json'
 
-if (-not (Test-Path -LiteralPath $registryPath -PathType Leaf)) {
-    throw "Invite registry not found: $registryPath"
+if (-not (Test-Path -LiteralPath $registryTemplatePath -PathType Leaf)) {
+    throw "Invite registry template not found: $registryTemplatePath"
 }
 
-$registry = Get-Content -LiteralPath $registryPath -Encoding UTF8 | Out-String | ConvertFrom-Json
+if (-not (Test-Path -LiteralPath $privateDirectory -PathType Container)) {
+    New-Item -ItemType Directory -Path $privateDirectory | Out-Null
+}
+
+$registrySourcePath = if (Test-Path -LiteralPath $privateRegistryPath -PathType Leaf) {
+    $privateRegistryPath
+}
+else {
+    $registryTemplatePath
+}
+$registry = Get-Content -LiteralPath $registrySourcePath -Encoding UTF8 | Out-String | ConvertFrom-Json
 if ($registry.version -ne 1) {
     throw 'Unsupported invite registry version'
 }
 
-$existingUsers = @($registry.users)
+$existingUsers = if ($ReplaceExisting) { @() } else { @($registry.users) }
 do {
     $code = New-RandomInviteCode
     $codeHash = Get-Sha256Hex -Value $code
@@ -80,18 +97,18 @@ $registry.users = @($existingUsers) + @([PSCustomObject]@{
     active = $true
 })
 
-if (-not (Test-Path -LiteralPath $privateDirectory -PathType Container)) {
-    New-Item -ItemType Directory -Path $privateDirectory | Out-Null
-}
-
-if (Test-Path -LiteralPath $privatePath -PathType Leaf) {
-    $privateRegistry = Get-Content -LiteralPath $privatePath -Encoding UTF8 | Out-String | ConvertFrom-Json
+if (Test-Path -LiteralPath $privateCodesPath -PathType Leaf) {
+    $privateRegistry = Get-Content -LiteralPath $privateCodesPath -Encoding UTF8 | Out-String | ConvertFrom-Json
     if ($privateRegistry.version -ne 1) {
         throw 'Unsupported private invite registry version'
     }
 }
 else {
     $privateRegistry = [PSCustomObject]@{ version = 1; codes = @() }
+}
+
+if ($ReplaceExisting) {
+    $privateRegistry.codes = @()
 }
 
 $privateRegistry.codes = @($privateRegistry.codes) + @([PSCustomObject]@{
@@ -101,9 +118,17 @@ $privateRegistry.codes = @($privateRegistry.codes) + @([PSCustomObject]@{
     createdAt = [DateTimeOffset]::UtcNow.ToString('o')
 })
 
-Write-Utf8JsonFile -Path $registryPath -Value $registry
-Write-Utf8JsonFile -Path $privatePath -Value $privateRegistry
+Write-Utf8JsonFile -Path $privateRegistryPath -Value $registry
+Write-Utf8JsonFile -Path $privateCodesPath -Value $privateRegistry
+if ($ResetPublicTemplate) {
+    Write-Utf8JsonFile -Path $registryTemplatePath -Value ([PSCustomObject]@{
+        version = 1
+        users = @()
+    })
+}
 
-Write-Output "Invite code created: $code"
-Write-Output "Plaintext stored only in: $privatePath"
-Write-Output "Tracked registry stores only SHA-256: $registryPath"
+if (-not $Quiet) {
+    Write-Output "Invite code created: $code"
+    Write-Output "Plaintext stored only in: $privateCodesPath"
+    Write-Output "Private registry stores only SHA-256: $privateRegistryPath"
+}

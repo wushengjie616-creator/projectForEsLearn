@@ -4,6 +4,8 @@
 
 阅读页会把每个西语单词渲染为可聚焦按钮。用户点击后，浏览器只向本站 `POST /api/translate-word` 发送被点单词和最多 600 个字符的当前段落上下文；本站服务端再调用 DeepSeek。API Key 永不进入前端代码或浏览器响应。
 
+例外：三篇 OpenStax 材料按其页面原始说明关闭 DeepSeek。对应阅读页不渲染点词按钮，显示中文概述并链接 OpenStax 原始页面；平台阅读请求还携带材料 slug，服务端会在读取 DeepSeek 配置、限流和外部调用之前返回 403。该边界约束本站提供的 DeepSeek 流程，不声称能够阻止用户在站外复制公开文本。
+
 `/crear-material` 还允许受邀用户粘贴西语短文或选择本地 TXT，并通过 `POST /api/generate-material` 生成符合本站结构的学习材料：难度说明、逐段中译和语言提示、重点词汇、语法观察、阅读理解、写作练习及建议学习步骤。用户可以选择自动/A1–B2 目标等级，以及均衡、词汇、语法或写作重点；成功结果与原文按邀请码用户保存，可从 `/mis-materiales` 再次查看。
 
 同一页面还提供两阶段文章生成：用户输入 3–1000 个字符的想法，或从 6 个服务端固定主题中选择一个，再由 `POST /api/generate-article` 生成 A1–B2 西语短文草稿。草稿不会立即入库；用户检查后点击“转换并保存为学习材料”，才会再次调用 `/api/generate-material`，此后复看、练习、批改和清理全部复用现有链路。文章生成每位用户每 10 分钟最多 5 次，写作要求和主题描述均按不可信数据处理。
@@ -38,11 +40,14 @@
 
 ## 本地启动（PowerShell）
 
-先按 [Windows 邀请码与 Supabase 接入指南](supabase-setup.md) 使用个人邀请码登录，并执行两份数据库迁移。点词释义不依赖数据库，但个性化材料与练习必须先配置 Supabase。
+新克隆先按 [Windows 邀请码与 Supabase 接入指南](supabase-setup.md) 创建自己的 Supabase 项目、执行两份数据库迁移并生成个人邀请码。点词释义不依赖数据库，但个性化材料与练习必须先配置 Supabase。
 
-如需让本机以后启动时自动使用同一个 Key，在项目目录用记事本打开本地环境文件：
+先从 `.env.example` 创建 Git 忽略的本地环境文件，再用记事本打开：
 
 ```powershell
+if (-not (Test-Path -LiteralPath '.env.local')) {
+    Copy-Item -LiteralPath '.env.example' -Destination '.env.local'
+}
 notepad.exe '.env.local'
 ```
 

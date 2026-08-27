@@ -150,8 +150,8 @@
     {
       "id": "quiroga-la-abeja-haragana",
       "path": "content/raw/quiroga/la-abeja-haragana.txt",
-      "bytes": 12906,
-      "sha256": "6ca67b2774de3dc6cedf5ea37174d907321ca6d58254b28aaee66333134de6fb",
+      "bytes": 12905,
+      "sha256": "7451fa61155b219eceb63dbd768a0e1fcae1f41dab65b50025ed6d0ba3fa8901",
       "sourceUrl": "https://es.wikisource.org/wiki/La_abeja_haragana",
       "rights": "public-domain-work-1918-author-died-1937; source-page-CC-BY-SA-4.0",
       "processingStatus": "published-learning-material"

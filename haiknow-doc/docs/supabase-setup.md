@@ -4,19 +4,19 @@
 
 应用不再使用邮箱、密码、邮件确认或 Supabase Auth。每位学习者使用一个由本项目 PowerShell 工具生成的个人邀请码：
 
-- 明文邀请码保存在 `.local/invite-codes.json`，该目录被 Git 忽略；
-- 可开源的 `src/config/invite-users.json` 只保存 SHA-256、随机用户 UUID、标签和启用状态；
+- 明文邀请码保存在 `.local/invite-codes.json`，哈希、随机用户 UUID、标签和启用状态保存在 `.local/invite-users.json`；整个目录被 Git 忽略；
+- 可开源的 `src/config/invite-users.json` 是空注册表模板；生产部署从加密环境变量 `INVITE_USERS_JSON` 读取私有哈希注册表；
 - 登录后得到 30 天签名 HttpOnly Cookie；每次读取会话时都会确认该用户仍处于启用状态；
 - 学习进度由 Next.js 服务端使用 Supabase secret key 读写，并显式限定会话中的 `user_id`。
 
-首个邀请码已经生成并保存在本项目中。本地 `.env.local` 已连接远端 Supabase，两份迁移都已执行；2026-08-27 已通过数据库 CRUD、邀请码登录、阅读进度 Server Action、个性化材料持久化复看、客观练习、确定性批改、答题记录和主动清理验收。第二个真实邀请码的交叉数据隔离及 Vercel 等生产部署环境仍需单独配置和验收。
+新克隆不会包含 `.env.local`、Supabase 凭据或邀请码明文；部署者必须按本文创建自己的 Supabase 项目、执行迁移并生成邀请码。项目维护实例曾于 2026-08-27 通过数据库 CRUD、邀请码登录、阅读进度 Server Action、个性化材料持久化复看、客观练习、确定性批改、答题记录和主动清理验收，但这不替代新部署的独立验收。第二个真实邀请码的交叉数据隔离及 Vercel 等生产部署环境仍需单独配置和验收。
 
 ## 1. 查看和生成邀请码
 
 查看本机保存的邀请码：
 
 ```powershell
-Set-Location 'D:\STUDY\projectForEsLearn'
+Set-Location '<你的项目克隆目录>'
 Get-Content -Raw -Encoding UTF8 -LiteralPath '.\.local\invite-codes.json'
 ```
 
@@ -26,13 +26,27 @@ Get-Content -Raw -Encoding UTF8 -LiteralPath '.\.local\invite-codes.json'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File '.\scripts\new-invite-code.ps1' -Label '学习者 2'
 ```
 
-脚本使用加密随机数生成 96 位邀请码，同时更新明文文件和哈希注册表。生成或停用邀请码后重启开发服务器。
+脚本使用加密随机数生成 96 位邀请码，同时更新两个 Git 忽略的私有文件。应用依次读取生产 `INVITE_USERS_JSON`、本机 `.local/invite-users.json` 和仓库空模板；生成或停用邀请码后重启开发服务器。
 
-邀请码相当于密码：不要把 `.local/invite-codes.json` 加入 Git，不要把明文放入 README、Issue、日志或聊天。若邀请码泄露，把 `src/config/invite-users.json` 对应记录的 `active` 改为 `false` 并重启；已有会话会立即失效。然后为该学习者生成新身份。当前版本不提供旧身份进度自动迁移。
+邀请码相当于密码：不要把 `.local/invite-codes.json`、`.local/invite-users.json` 或生产 `INVITE_USERS_JSON` 加入 Git，也不要把它们放入 README、Issue、日志或聊天。若邀请码泄露，可静默替换全部现有邀请码并维持公开模板为空：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File '.\scripts\new-invite-code.ps1' -Label '管理员' -ReplaceExisting -ResetPublicTemplate -Quiet
+```
+
+旧邀请码和已有 Cookie 会立即失效；新明文只保存在 `.local/invite-codes.json`。当前版本不提供旧身份进度自动迁移。重启本地服务，并在生产环境更新 `INVITE_USERS_JSON` 后重新部署。
+
+部署到 Vercel 前，把哈希注册表直接复制到剪贴板并粘贴到加密环境变量 `INVITE_USERS_JSON`，不要把内容发给 Codex：
+
+```powershell
+(Get-Content -Raw -Encoding UTF8 -LiteralPath '.\.local\invite-users.json').Trim() | Set-Clipboard
+```
+
+粘贴完成后运行 `Set-Clipboard -Value ''`。生产环境变量的变更只对新部署生效。
 
 ## 2. 会话密钥
 
-本项目已经在 Git 忽略的 `.env.local` 中生成本地 `INVITE_SESSION_SECRET`。其他环境需使用独立的至少 32 字符随机值：
+每个新克隆都要在 Git 忽略的 `.env.local` 中设置 `INVITE_SESSION_SECRET`。每个环境需使用独立的至少 32 字符随机值：
 
 ```dotenv
 INVITE_SESSION_SECRET=每个环境独立生成的高强度随机值
@@ -103,16 +117,16 @@ npm.cmd run dev
 验收顺序：
 
 1. 打开 `/login`，确认只有邀请码输入框，没有邮箱、密码或找回密码；
-2. 使用 `.local/invite-codes.json` 中的首个邀请码登录；
+2. 使用刚刚生成并保存在 `.local/invite-codes.json` 中的邀请码登录；
 3. 打开阅读页，保存草稿并刷新，确认数据仍存在；完成后再次保存草稿，确认不会被暗中取消完成；
 4. 生成第二个邀请码并重启，用第二个邀请码登录，确认看不到第一个用户的草稿；
-5. 将第二个用户的 `active` 改为 `false` 并重启，确认其现有 Cookie 立即失效；
+5. 将 `.local/invite-users.json` 中第二个用户的 `active` 改为 `false` 并重启，确认其现有 Cookie 立即失效；
 6. 检查 Supabase 表，确认两位用户的数据使用注册表里的不同 UUID；
 7. 确认浏览器 bundle、网络请求、日志和 Git 中都没有 `SUPABASE_SECRET_KEY` 或明文邀请码。
 8. 生成一份个性化材料，刷新并从 `/mis-materiales` 再次打开；生成练习并提交两次，确认 `/mis-datos` 的材料、题集和记录计数增加；
 9. 清空答题记录，确认材料和题集仍存在；删除该材料，确认关联题集与记录一并删除。
 
-当前第 1–3、8–9 步及单邀请码阅读进度保存链路已经自动验证，并已验证旧版本提交会被拒绝且不会改变远端记录。第 4–7 步中的第二用户隔离、停用会话和公开前密钥检查仍待验收，完成前不应声称多用户与公开发布链路已经生产可用。
+项目维护实例的第 1–3、8–9 步及单邀请码阅读进度保存链路曾于 2026-08-27 自动验证，并验证旧版本提交会被拒绝且不会改变远端记录。每个新部署仍须重新验收；第 4–7 步中的第二用户隔离、停用会话和公开前密钥检查完成前，不应声称该部署的多用户与公开发布链路已经生产可用。
 
 开发服务器运行时，可在另一个 PowerShell 窗口重复自动验收。脚本只写入唯一临时记录，并在 `finally` 中清理；测试真实阅读保存 action 前会快照原记录，同时检查保存草稿保留完成态和旧版本冲突保护，结束后恢复原值：
 

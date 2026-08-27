@@ -1,10 +1,12 @@
 import { deepSeekFailureResponse, ensureDeepSeekResponseOk } from "./provider-error";
+import { isReadingDeepSeekEnabled } from "@/content/readings";
 
 export const DEFAULT_DEEPSEEK_MODEL = "deepseek-v4-flash";
 
 export type WordTranslationRequest = {
   word: string;
   context: string;
+  sourceReadingSlug?: string;
 };
 
 export type WordTranslation = {
@@ -33,6 +35,7 @@ type HandlerDependencies = {
 };
 
 const LATIN_WORD = /^[\p{Script=Latin}\p{M}]+(?:['’\-][\p{Script=Latin}\p{M}]+)*$/u;
+const READING_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 function jsonResponse(body: unknown, status: number) {
   return Response.json(body, {
@@ -43,7 +46,7 @@ function jsonResponse(body: unknown, status: number) {
 
 function parseTranslationRequest(value: unknown): WordTranslationRequest | null {
   if (!value || typeof value !== "object") return null;
-  const { word, context } = value as Record<string, unknown>;
+  const { word, context, sourceReadingSlug } = value as Record<string, unknown>;
   if (typeof word !== "string" || typeof context !== "string") return null;
 
   const trimmedWord = word.trim();
@@ -58,7 +61,16 @@ function parseTranslationRequest(value: unknown): WordTranslationRequest | null 
     return null;
   }
 
-  return { word: trimmedWord, context: trimmedContext };
+  if (
+    sourceReadingSlug !== undefined &&
+    (typeof sourceReadingSlug !== "string" ||
+      sourceReadingSlug.length > 120 ||
+      !READING_SLUG.test(sourceReadingSlug))
+  ) {
+    return null;
+  }
+
+  return { word: trimmedWord, context: trimmedContext, sourceReadingSlug };
 }
 
 function requiredString(value: unknown, maxLength: number): string | null {
@@ -170,6 +182,13 @@ export async function handleWordTranslationRequest(
   }
   const input = parseTranslationRequest(body);
   if (!input) return jsonResponse({ error: "请选择一个有效的西语单词。" }, 400);
+
+  if (input.sourceReadingSlug && !isReadingDeepSeekEnabled(input.sourceReadingSlug)) {
+    return jsonResponse({
+      code: "source_ai_processing_restricted",
+      error: "根据 OpenStax 的原始说明，本材料未启用 DeepSeek 功能。",
+    }, 403);
+  }
 
   if (!dependencies.apiKey) {
     return jsonResponse({ error: "AI 释义服务尚未配置，请联系管理员。" }, 503);

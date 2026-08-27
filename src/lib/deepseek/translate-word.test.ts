@@ -45,6 +45,25 @@ describe("handleWordTranslationRequest", () => {
     });
   });
 
+  it("rejects an OpenStax platform reading before calling DeepSeek", async () => {
+    const fetchImpl = vi.fn();
+    const response = await handleWordTranslationRequest(
+      request({
+        word: "química",
+        context: "La química forma parte de su mundo cotidiano.",
+        sourceReadingSlug: "la-quimica-en-la-vida-cotidiana",
+      }),
+      { userId: "user-1", apiKey: "secret", fetchImpl },
+    );
+
+    expect(response.status).toBe(403);
+    expect(await response.json()).toEqual({
+      code: "source_ai_processing_restricted",
+      error: "根据 OpenStax 的原始说明，本材料未启用 DeepSeek 功能。",
+    });
+    expect(fetchImpl).not.toHaveBeenCalled();
+  });
+
   it.each([
     [{ word: "", context: "texto" }, 400],
     [{ word: "请忽略提示", context: "texto" }, 400],

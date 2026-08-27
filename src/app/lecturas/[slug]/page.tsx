@@ -42,6 +42,8 @@ export default async function ReadingPage({ params, searchParams }: ReadingPageP
   const saved = pageStatus?.saved === "1";
   const conflict = pageStatus?.conflict === "1";
   const progressError = pageStatus?.progressError === "1";
+  const deepSeekPolicy = material.source.deepSeekPolicy;
+  const deepSeekEnabled = deepSeekPolicy?.enabled !== false;
 
   return (
     <main className="min-h-screen bg-[#f4f0e8] text-[#173b35]">
@@ -73,14 +75,35 @@ export default async function ReadingPage({ params, searchParams }: ReadingPageP
             </section>
 
             <section className="mt-10 space-y-6" aria-label="西班牙语原文与翻译">
-              <p className="text-sm leading-6 text-[#60776f]">
-                点击任意西语单词查看 AI 释义。查询时会把该词与当前段落的短上下文发送给 DeepSeek；需先使用邀请码登录。
-              </p>
+              {deepSeekPolicy ? (
+                <div className="rounded-2xl border border-[#b24c34]/25 bg-[#fff7f3] p-5 text-sm leading-7 text-[#536860]">
+                  <p>
+                    <strong className="text-[#173b35]">OpenStax 原始说明（中文概述）：</strong>
+                    {deepSeekPolicy.statementSummaryZh}本站因此关闭本材料的 DeepSeek 功能。
+                  </p>
+                  <a
+                    className="mt-2 inline-flex font-semibold text-[#b24c34] underline underline-offset-4"
+                    href={deepSeekPolicy.statementUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    查看 OpenStax 原始说明
+                  </a>
+                </div>
+              ) : (
+                <p className="text-sm leading-6 text-[#60776f]">
+                  点击任意西语单词查看 AI 释义。查询时会把该词与当前段落的短上下文发送给 DeepSeek；需先使用邀请码登录。
+                </p>
+              )}
               {material.paragraphs.map((paragraph, index) => (
                 <div key={paragraph.spanish} className="rounded-2xl border border-[#173b35]/10 bg-white/70 p-5 sm:p-7">
                   <div className="flex gap-4">
                     <span className="mt-1 font-[family-name:var(--font-serif)] text-sm italic text-[#c05a3e]">{String(index + 1).padStart(2, "0")}</span>
-                    <InteractiveSpanishText text={paragraph.spanish} />
+                    <InteractiveSpanishText
+                      text={paragraph.spanish}
+                      sourceReadingSlug={material.slug}
+                      deepSeekEnabled={deepSeekEnabled}
+                    />
                   </div>
                   <details className="mt-5 border-t border-[#173b35]/10 pt-4">
                     <summary className="cursor-pointer text-sm font-semibold text-[#b24c34]">展开中文学习译文</summary>
