@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.vercel/
+coverage/
+supabase/.temp/
+.env
+.env.*
+!.env.example
+.local/
+npm-debug.log*
+*.tsbuildinfo
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+Thumbs.db

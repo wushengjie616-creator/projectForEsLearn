@@ -1,0 +1,13 @@
+TITLE: Procesos espontáneos y no espontáneos
+BOOK: Química: Comenzando con los átomos 2ed
+SECTION: 12.1 Espontaneidad (selected complete opening prose passage)
+AUTHORS: Edward J. Neth; Paul Flowers; Klaus Theopold; Richard Langley; William R. Robinson
+PUBLISHER: OpenStax, Rice University
+PUBLICATION_DATE: 2022-06-02
+SOURCE: https://openstax.org/books/qu%C3%ADmica-comenzando-%C3%A1tomos-2ed/pages/12-1-espontaneidad
+LICENSE: Creative Commons Attribution 4.0 International (CC BY 4.0)
+REQUIRED_ATTRIBUTION: Acceso gratuito en https://openstax.org/books/qu%C3%ADmica-comenzando-%C3%A1tomos-2ed/pages/1-introduccion
+RETRIEVED_AT: 2026-08-26
+EDITORIAL_STATE: Exact complete opening prose paragraph; learning objectives and figures excluded; no wording changed.
+
+Los procesos tienen una tendencia natural a producirse en una dirección bajo una serie de condiciones determinadas. El agua fluye naturalmente cuesta abajo, pero el flujo cuesta arriba requiere la intervención externa, como el uso de una bomba. El hierro expuesto a la atmósfera terrestre se corroe, pero el óxido no se convierte en hierro sin un tratamiento químico intencionado. Un proceso espontáneo es aquel que se produce de forma natural en determinadas condiciones. Un proceso no espontáneo, en cambio, no tendrá lugar a menos que sea "impulsado" por el aporte continuo de energía de una fuente externa. Un proceso que es espontáneo en una dirección bajo un conjunto particular de condiciones es no espontáneo en la dirección inversa. Por ejemplo, a temperatura ambiente y a la presión atmosférica típica, el hielo se derrite espontáneamente, pero el agua no se congela espontáneamente.

@@ -1,0 +1,56 @@
+TITLE: Movimiento y fuerza
+RESOURCE: La fuerza y sus efectos
+AUTHOR: Luis García Cabello
+COORDINATION: Nuria Rodríguez Polo
+DIRECTION: Área Recursos Educativos Digitales (INTEF)
+PUBLISHER: Instituto Nacional de Tecnologías Educativas y de Formación del Profesorado
+PUBLICATION_YEAR: 2022
+SOURCE: https://descargas.intef.es/recursos_educativos/It_didac/CCNN/5/08/La_fuerza_y_sus_efectos/movimiento_y_fuerza.html
+CREDITS: https://descargas.intef.es/recursos_educativos/It_didac/CCNN/5/08/La_fuerza_y_sus_efectos/crditos.html
+LICENSE: Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)
+LICENSE_URL: https://creativecommons.org/licenses/by-sa/4.0/
+ATTRIBUTION: Luis García Cabello, “Movimiento y fuerza”, itinerario “La fuerza y sus efectos”, INTEF, 2022, CC BY-SA 4.0.
+RETRIEVED_AT: 2026-08-27
+EDITORIAL_STATE: Complete explanatory prose section retained. HTML, navigation, exercises, video links, images and third-party media removed; non-breaking and zero-width spaces normalized; wording unchanged.
+
+MOVIMIENTO Y FUERZA
+
+¿Qué es el movimiento?
+
+Podemos llamar movimiento al cambio de posición que experimenta un cuerpo en el espacio en un período de tiempo determinado. El movimiento está directamente relacionado con la fuerza, puesto que esta es capaz de iniciar, detener o modificar un movimiento. Un cuerpo en reposo jamás se moverá si no se ejerce una fuerza sobre él. Por ejemplo: un balón de fútbol jamás se moverá hasta que sea golpeado por alguien.
+
+Igualmente, un movimiento no se pararía si no se ejerciera ninguna fuerza sobre él. Sin embargo, esto no quiere decir que si golpeamos una pelota, esta seguirá moviéndose indefinidamente porque sobre ella siempre actúan una serie de fuerzas que estudiaremos a continuación.
+
+Clasificación de las fuerzas que pueden producir movimientos
+
+Dependiendo de si los elementos se rozan o no, podemos clasificar las fuerzas en:
+
+Fuerza de contacto
+
+Para que se dé este tipo de fuerza es necesario que haya contacto físico entre los dos cuerpos.
+
+Dependiendo de la duración del contacto, las podemos dividir en dos categorías:
+
+Instantáneas: solo actúan sobre un breve instante de tiempo sobre los cuerpos, dando lugar a movimientos uniformes.
+
+Continuas: actúan de forma continuada sobre los cuerpos dando lugar a movimientos acelerados.
+
+Los principales tipos de fuerzas de contacto son:
+
+Fuerza de empuje: esta fuerza se presenta en los cuerpos sumergidos en fluidos y tiene sentido contrario al de la gravedad. Arquímedes estableció que era proporcional al volumen de líquido desplazado por el cuerpo.
+
+Fuerza normal: es la fuerza que ejerce una superficie sobre un cuerpo. Es de la misma dirección, pero de sentido contrario a la fuerza que ejerce el cuerpo sobre la superficie. Es perpendicular a la superficie.
+
+Fuerza de tensión: se presenta al tirar de un cable, cuerda o resorte.
+
+Fuerza de rozamiento: es una fuerza que se ejerce cuando dos cuerpos diferentes están en contacto. Esta fuerza siempre posee sentido opuesto al movimiento pues nace como una resistencia de los cuerpos al movimiento. Varía dependiendo del tipo de superficie.
+
+Fuerza a distancia
+
+Es la fuerza que puede ejercerse sin contacto físico alguno entre los cuerpos. Los tipos más importantes son:
+
+Fuerza de gravedad: es la que ejerce la masa de los cuerpos sobre los objetos cercanos, atrayéndolos hacia sí. El principal ejemplo es la fuerza de atracción que ejerce la Tierra sobre los cuerpos que están sobre ella.
+
+Fuerza eléctrica: es la fuerza que se da entre dos o más cargas eléctricas. Si son del mismo signo, se repelen; si son de distinto signo, se atraen.
+
+Magnetismo: son características de los imanes. Son fuerzas de atracción (entre partículas con carga diferente) o repulsión (entre partículas con la misma cargas) entre campos electromagnéticos.

@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "storageLimitBytes": 1048576000,
+  "licenseAllowlist": ["public-domain", "CC0", "CC BY", "CC BY-SA", "explicit-permission"],
+  "items": [
+    {
+      "id": "samaniego-la-gallina-de-los-huevos-de-oro",
+      "path": "content/raw/samaniego/la-gallina-de-los-huevos-de-oro.txt",
+      "bytes": 956,
+      "sha256": "41f958455404eafc0c316970aceb667fb191415ce2d7ccaeef68dee793c12656",
+      "sourceUrl": "https://es.wikisource.org/wiki/La_gallina_de_los_huevos_de_oro_(Samaniego)",
+      "rights": "public-domain-work; source-page-CC-BY-SA-4.0",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "samaniego-el-cuervo-y-el-zorro",
+      "path": "content/raw/samaniego/el-cuervo-y-el-zorro.txt",
+      "bytes": 1149,
+      "sha256": "0ba700409899bdedaa36d5f104c974f9632300930197bb76090d9aa0604a7b70",
+      "sourceUrl": "https://es.wikisource.org/wiki/El_cuervo_y_el_zorro",
+      "rights": "public-domain-work; source-page-CC-BY-SA-4.0",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "samaniego-la-lechera",
+      "path": "content/raw/samaniego/la-lechera.txt",
+      "bytes": 1748,
+      "sha256": "d793a2ee2f9408c8ea8a242af48e0a28bd47764401cd3de6414e67c4c1e90ebf",
+      "sourceUrl": "https://es.wikisource.org/wiki/La_lechera",
+      "rights": "public-domain-work; source-page-CC-BY-SA-4.0",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "samaniego-el-leon-y-el-raton",
+      "path": "content/raw/samaniego/el-leon-y-el-raton.txt",
+      "bytes": 1102,
+      "sha256": "e62005c9af752d52502f982bb1dc5a40e5e0db325651db0835f16e0f115b7845",
+      "sourceUrl": "https://es.wikisource.org/wiki/El_le%C3%B3n_y_el_rat%C3%B3n_(Samaniego)",
+      "rights": "public-domain-work; source-page-CC-BY-SA-4.0",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "samaniego-los-dos-amigos-y-el-oso",
+      "path": "content/raw/samaniego/los-dos-amigos-y-el-oso.txt",
+      "bytes": 1171,
+      "sha256": "48c9da969361aa9baccb5420bc95bc250808a163a481f2ce92666606e5d48867",
+      "sourceUrl": "https://es.wikisource.org/wiki/Los_dos_amigos_y_el_oso",
+      "rights": "public-domain-work; source-page-CC-BY-SA-4.0",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "samaniego-la-zorra-y-la-gallina",
+      "path": "content/raw/samaniego/la-zorra-y-la-gallina.txt",
+      "bytes": 1144,
+      "sha256": "3461b60b7d08b853a4c4f507fcd690ba16ce380d9f8d31889229bc22d48cff0d",
+      "sourceUrl": "https://es.wikisource.org/wiki/La_zorra_y_la_gallina",
+      "rights": "public-domain-work; source-page-CC-BY-SA-4.0",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "irving-lamarca-gobierno-de-la-alhambra",
+      "path": "content/raw/irving-lamarca/gobierno-de-la-alhambra.txt",
+      "bytes": 5344,
+      "sha256": "0780647e792e722bba60863e0d202cce8e554969626db4d8b00bd1508bb4536e",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/52262",
+      "rights": "public-domain-author-and-translator; Project-Gutenberg-eBook-52262-license",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "irving-lamarca-tradiciones-locales",
+      "path": "content/raw/irving-lamarca/tradiciones-locales.txt",
+      "bytes": 4934,
+      "sha256": "de2c9b637a569f50cf88448e23619954eb879becc31793e98e1115ea00d31bb7",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/52262",
+      "rights": "public-domain-author-and-translator; Project-Gutenberg-eBook-52262-license",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "irving-lamarca-la-casa-del-gallo",
+      "path": "content/raw/irving-lamarca/la-casa-del-gallo.txt",
+      "bytes": 2123,
+      "sha256": "18118996cce6a3b4e481a92b4e0374faa9bc36cb1f241b3a33936eafd6630b93",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/52262",
+      "rights": "public-domain-author-and-translator; Project-Gutenberg-eBook-52262-license",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "openstax-la-quimica-en-la-vida-cotidiana",
+      "path": "content/raw/openstax/la-quimica-en-la-vida-cotidiana.txt",
+      "bytes": 2128,
+      "sha256": "bddd06bb7cde107e145d89488076e55fe7fec18d08e5d256b189de96a7db4785",
+      "sourceUrl": "https://openstax.org/books/qu%C3%ADmica-comenzando-%C3%A1tomos-2ed/pages/1-introduccion",
+      "rights": "CC-BY-4.0; required-digital-attribution-preserved",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "openstax-modelos-teorias-y-leyes-cientificas",
+      "path": "content/raw/openstax/modelos-teorias-y-leyes-cientificas.txt",
+      "bytes": 4984,
+      "sha256": "a4cccbe58fced0c06b652b0e02055f5a55d041f5c1d45c2771f0b49795fe186e",
+      "sourceUrl": "https://openstax.org/books/f%C3%ADsica-universitaria-volumen-1/pages/1-1-el-alcance-y-la-escala-de-la-fisica",
+      "rights": "CC-BY-4.0; required-digital-attribution-preserved",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "openstax-procesos-espontaneos-y-no-espontaneos",
+      "path": "content/raw/openstax/procesos-espontaneos-y-no-espontaneos.txt",
+      "bytes": 1676,
+      "sha256": "f2f6064388b38e8eaa3371b9e02a584f3067e799737b047d2cffa301028e6fc4",
+      "sourceUrl": "https://openstax.org/books/qu%C3%ADmica-comenzando-%C3%A1tomos-2ed/pages/12-1-espontaneidad",
+      "rights": "CC-BY-4.0; required-digital-attribution-preserved",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "european-union-el-pacto-verde-europeo",
+      "path": "content/raw/european-union/el-pacto-verde-europeo.txt",
+      "bytes": 1953,
+      "sha256": "d74b282670310cfb359e275314ebac734a2b5b1f08a46c1c8d7cfb35196dcc9d",
+      "sourceUrl": "https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_es",
+      "rights": "CC-BY-4.0; EU-owned-text-only; source-and-changes-indicated",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "european-union-proteccion-del-medio-ambiente-e-innovacion",
+      "path": "content/raw/european-union/proteccion-del-medio-ambiente-e-innovacion.txt",
+      "bytes": 1448,
+      "sha256": "55f51c7b11b1fef534dbc2f3e9b63b0bcde6d1b777c601a4b3a50a8aafcc2208",
+      "sourceUrl": "https://european-union.europa.eu/priorities-and-actions/actions-topic/environment_es",
+      "rights": "CC-BY-4.0; EU-owned-text-only; source-and-changes-indicated",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "european-union-como-funciona-la-politica-agricola-de-la-ue",
+      "path": "content/raw/european-union/como-funciona-la-politica-agricola-de-la-ue.txt",
+      "bytes": 1940,
+      "sha256": "864954a9ab0eec98b67c89c1f18257c9ad58ae60574061c5a5a14fa199d92d00",
+      "sourceUrl": "https://european-union.europa.eu/priorities-and-actions/actions-topic/agriculture_es",
+      "rights": "CC-BY-4.0; EU-owned-text-only; source-and-changes-indicated",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "unesco-la-ia-y-el-significado-de-la-literatura",
+      "path": "content/raw/unesco/la-ia-y-el-significado-de-la-literatura.txt",
+      "bytes": 2614,
+      "sha256": "b5cd535db52fb0f1df170f6b4b149fae648ba648c511fe9df7b910d163290e5c",
+      "sourceUrl": "https://www.unesco.org/es/articles/simulando-el-alma-la-ia-y-el-legado-de-la-literatura-kazaja",
+      "rights": "CC-BY-SA-3.0-IGO; attribution-and-derivative-notice-preserved; share-alike-learning-adaptation",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "quiroga-la-abeja-haragana",
+      "path": "content/raw/quiroga/la-abeja-haragana.txt",
+      "bytes": 12906,
+      "sha256": "6ca67b2774de3dc6cedf5ea37174d907321ca6d58254b28aaee66333134de6fb",
+      "sourceUrl": "https://es.wikisource.org/wiki/La_abeja_haragana",
+      "rights": "public-domain-work-1918-author-died-1937; source-page-CC-BY-SA-4.0",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "intef-movimiento-y-fuerza",
+      "path": "content/raw/intef/movimiento-y-fuerza.txt",
+      "bytes": 3864,
+      "sha256": "09d6b0a28e0d547ca7d9593a3e007f3f4810cdddb01e7ff2ca91bb120433ba35",
+      "sourceUrl": "https://descargas.intef.es/recursos_educativos/It_didac/CCNN/5/08/La_fuerza_y_sus_efectos/movimiento_y_fuerza.html",
+      "rights": "CC-BY-SA-4.0; INTEF-authored-explanatory-text-only; third-party-media-excluded",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "intef-la-dieta-saludable",
+      "path": "content/raw/intef/la-dieta-saludable.txt",
+      "bytes": 1797,
+      "sha256": "aa4608b6bc0ef1bbfa926ddd24ecffff5f95b7a7cb20ff43a6a1816b57e0c7fb",
+      "sourceUrl": "https://descargas.intef.es/recursos_educativos/It_didac/CCNN/1/05/Nuestra_alimentacion/la_dieta_saludable.html",
+      "rights": "CC-BY-SA-4.0; INTEF-student-reading-text-only; third-party-media-excluded",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "intef-las-comidas-del-dia",
+      "path": "content/raw/intef/las-comidas-del-dia.txt",
+      "bytes": 4423,
+      "sha256": "5f73e7d6a2d3c72678b9590b43e96348eb64896238dfa0578a65970b7768585e",
+      "sourceUrl": "https://descargas.intef.es/recursos_educativos/It_didac/CCNN/1/05/Nuestra_alimentacion/las_comidas_del_da.html",
+      "rights": "CC-BY-SA-4.0; INTEF-student-reading-text-only; third-party-media-excluded",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "intef-los-alimentos-y-las-estaciones",
+      "path": "content/raw/intef/los-alimentos-y-las-estaciones.txt",
+      "bytes": 2099,
+      "sha256": "0e430e79df630900c953679f9d09960ed30f6961c092ec7c3b969769a59e000e",
+      "sourceUrl": "https://descargas.intef.es/recursos_educativos/It_didac/CCNN/1/05/Nuestra_alimentacion/los_alimentos_y_las_estaciones.html",
+      "rights": "CC-BY-SA-4.0; INTEF-student-definition-examples-task; third-party-media-excluded",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "unesco-courier-alimentacion-y-patrimonio-inmaterial",
+      "path": "content/raw/unesco-courier/alimentacion-y-patrimonio-inmaterial.txt",
+      "bytes": 7302,
+      "sha256": "8ceeff6a20e2ebd516b0024d01ba9bb1c2aa0787bb215af926f3ac8afdb40f04",
+      "sourceUrl": "https://courier.unesco.org/es/articles/alimentacion-y-patrimonio-inmaterial-una-relacion-llena-de-sabor",
+      "rights": "CC-BY-SA-3.0-IGO; text-only; attribution-and-derivative-notice-preserved; share-alike-learning-adaptation",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "global-voices-trampas-para-peces-de-brewarrina",
+      "path": "content/raw/global-voices/trampas-para-peces-de-brewarrina.txt",
+      "bytes": 2971,
+      "sha256": "690fc5e20a3a29090d5cadc99576e988206dc6edf8d83a66eccf1f377e71a52f",
+      "sourceUrl": "https://es.globalvoices.org/2026/08/08/trampas-para-peces-de-brewarrina-en-australia-podrian-ser-la-construccion-humana-mas-antigua-del-mundo/",
+      "rights": "CC-BY-3.0; author-and-Spanish-translator-attributed; selected-author-prose-only; third-party-material-excluded; changes-indicated",
+      "processingStatus": "published-learning-material"
+    },
+    {
+      "id": "african-storybook-un-jardin-en-el-congo",
+      "path": "content/raw/african-storybook/un-jardin-en-el-congo.txt",
+      "bytes": 1529,
+      "sha256": "39dfee6e9bebf5d5314867e34d6b0cdd90bb95f035bc58cf74feabab150b43fe",
+      "sourceUrl": "https://www.africanstorybook.org/read/downloadbook.php?a=1&d=0&id=35534&layout=landscape",
+      "rights": "CC-BY-4.0; complete-Spanish-story-text; author-translator-publisher-attributed; illustrations-excluded; learning-adaptation-indicated",
+      "processingStatus": "published-learning-material"
+    }
+  ]
+}

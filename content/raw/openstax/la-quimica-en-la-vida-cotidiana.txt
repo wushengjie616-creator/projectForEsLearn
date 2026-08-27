@@ -1,0 +1,19 @@
+TITLE: La química en la vida cotidiana
+BOOK: Química: Comenzando con los átomos 2ed
+SECTION: Capítulo 1, Introducción (selected complete prose passage)
+AUTHORS: Edward J. Neth; Paul Flowers; Klaus Theopold; Richard Langley; William R. Robinson
+PUBLISHER: OpenStax, Rice University
+PUBLICATION_DATE: 2022-06-02
+SOURCE: https://openstax.org/books/qu%C3%ADmica-comenzando-%C3%A1tomos-2ed/pages/1-introduccion
+LICENSE: Creative Commons Attribution 4.0 International (CC BY 4.0)
+REQUIRED_ATTRIBUTION: Acceso gratuito en https://openstax.org/books/qu%C3%ADmica-comenzando-%C3%A1tomos-2ed/pages/1-introduccion
+RETRIEVED_AT: 2026-08-26
+EDITORIAL_STATE: Exact prose from the section introduction; figure caption and chapter outline excluded; no wording changed.
+
+Suena el despertador y, después de darle al botón de “posponer" una o dos veces, se levanta de la cama. Se prepara una taza de café para ponerse en marcha y luego se ducha, se viste, desayuna y comprueba si hay mensajes en su teléfono. De camino a la escuela, se detiene a llenar el tanque de gasolina de su automóvil, lo que hace que casi llegue tarde al primer día de clase de Química.
+
+Mientras encuentra un asiento en el aula, lee la pregunta proyectada en la pantalla: “¡Bienvenidos a la clase! ¿Por qué debemos estudiar química?”.
+
+¿Tiene una respuesta? Puede que estudie química porque cumple un requisito académico, pero si tiene en cuenta sus actividades cotidianas, puede que la química le resulte interesante por otras razones. Casi todo lo que se hace y se encuentra durante el día tiene que ver con la química. Hacer café, cocer huevos y tostar el pan es algo que tiene que ver con la química.
+
+Los productos que utiliza, como el jabón y el champú, los tejidos que viste, los aparatos electrónicos que lo mantienen conectado al mundo, la gasolina que impulsa su automóvil, todos ellos y otros implican sustancias y procesos químicos. Tanto si es consciente como si no, la química forma parte de su mundo cotidiano. En este curso, aprenderá muchos de los principios esenciales que subyacen en la química de la vida moderna.

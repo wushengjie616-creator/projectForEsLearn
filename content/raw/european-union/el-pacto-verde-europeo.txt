@@ -1,0 +1,18 @@
+TITLE: El Pacto Verde Europeo
+SECTION: Cumplir lo prometido (complete introductory prose)
+AUTHOR_PUBLISHER: Comisión Europea
+RIGHTS_HOLDER: Unión Europea
+SOURCE: https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_es
+LICENSE_PAGE: https://european-union.europa.eu/legal-notice_es
+LICENSE: Creative Commons Attribution 4.0 International (CC BY 4.0), unless otherwise indicated on the source page
+ATTRIBUTION: © Unión Europea, 1995–2026. Fuente: Comisión Europea.
+RETRIEVED_AT: 2026-08-26
+EDITORIAL_STATE: Complete four-paragraph introduction; HTML tags and non-breaking spaces normalized to plain spaces; wording otherwise unchanged; images, logos and third-party material excluded.
+
+El Pacto Verde Europeo está transformando la UE en una economía moderna, eficiente en el uso de los recursos y competitiva.
+
+Puesto en marcha por la presidenta Von der Leyen en 2019, responde a las peticiones urgentes de los ciudadanos, especialmente de los jóvenes, para actuar por el clima. Establece un plan para transformar la economía, la energía, el transporte y las industrias en Europa a fin de conseguir un futuro más sostenible.
+
+Su objetivo es reducir las emisiones en al menos un 50 % de aquí a 2030, para llegar hasta el 55 %, al tiempo que se vincula jurídicamente el objetivo de neutralidad para 2050 a través de la Legislación Europea sobre el Clima. El Pacto Verde Europeo impulsa una transición limpia que protege a las personas y al planeta y que es económicamente sólida y socialmente justa.
+
+Invierte en innovación, tecnologías limpias e infraestructuras ecológicas, garantizando al mismo tiempo una transición justa para las comunidades más afectadas. Gracias al Pacto Verde Europeo, los europeos disfrutan de un aire más limpio y de productos y hogares más eficientes desde el punto de vista energético. También recurren a más fuentes de energía renovables para su vida diaria.
