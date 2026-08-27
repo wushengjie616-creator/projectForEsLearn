@@ -52,6 +52,11 @@ export const readingMaterialsBatch5: ReadingMaterial[] = [
       editorialNote: "收录 12.1 节开头的完整正文段落；排除学习目标和图示，未改写原句，学习页按例证切分为三段。",
       translationNote: "中文学习译文、词汇与练习由本站依据开放许可西语原文编写，并非 OpenStax 官方译文或答案。",
       requiredAttribution: `Acceso gratuito en ${bookUrl}`,
+      deepSeekPolicy: {
+        enabled: false,
+        statementUrl: "https://openstax.org/books/qu%C3%ADmica-comenzando-%C3%A1tomos-2ed/pages/12-1-espontaneidad",
+        statementSummaryZh: "未经 OpenStax 许可，该教材不得用于训练大型语言模型，也不得纳入大型语言模型或生成式 AI 产品。",
+      },
     },
   },
 ];

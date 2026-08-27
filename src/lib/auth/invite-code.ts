@@ -7,6 +7,17 @@ export type InviteUser = {
   active: boolean;
 };
 
+type InviteRegistryDocument = {
+  version: number;
+  users: unknown;
+};
+
+export type InviteRegistrySources = {
+  environmentRegistry?: string;
+  privateFileRegistry?: string;
+  bundledRegistry: InviteRegistryDocument;
+};
+
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/iu;
 const HASH_PATTERN = /^[0-9a-f]{64}$/u;
 
@@ -50,6 +61,30 @@ export function validateInviteUsers(value: unknown): InviteUser[] {
     hashes.add(user.codeHash);
     return user as InviteUser;
   });
+}
+
+export function resolveInviteUsers({
+  environmentRegistry,
+  privateFileRegistry,
+  bundledRegistry,
+}: InviteRegistrySources): InviteUser[] {
+  const serialized = environmentRegistry?.trim() || privateFileRegistry?.trim();
+  let selected: unknown = bundledRegistry;
+
+  if (serialized) {
+    try {
+      selected = JSON.parse(serialized);
+    } catch {
+      throw new Error("Invalid invite registry JSON");
+    }
+  }
+
+  if (!selected || typeof selected !== "object") {
+    throw new Error("Invalid invite registry JSON");
+  }
+  const registry = selected as Partial<InviteRegistryDocument>;
+  if (registry.version !== 1) throw new Error("Unsupported invite registry version");
+  return validateInviteUsers(registry.users);
 }
 
 export function findInviteUser(code: unknown, users: readonly InviteUser[]): InviteUser | null {

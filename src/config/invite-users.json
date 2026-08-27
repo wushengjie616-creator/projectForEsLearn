@@ -1,11 +1,4 @@
 {
-    "version":  1,
-    "users":  [
-                  {
-                      "id":  "697783ba-e76c-4e0d-ba23-b44eb6d1a3e7",
-                      "label":  "首位学习者",
-                      "codeHash":  "d0216566af77010023591449590e8ff3276c390fb1b255cb1769aca5cf61bdc7",
-                      "active":  true
-                  }
-              ]
+  "version": 1,
+  "users": []
 }

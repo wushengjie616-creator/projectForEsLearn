@@ -11,6 +11,11 @@ const openStaxSource = (url: string, bookUrl: string, editorialNote: string): Re
   editorialNote,
   translationNote: "中文学习译文、词汇与练习由本站依据开放许可西语原文编写，并非 OpenStax 官方译文或答案。",
   requiredAttribution: `Acceso gratuito en ${bookUrl}`,
+  deepSeekPolicy: {
+    enabled: false,
+    statementUrl: url,
+    statementSummaryZh: "未经 OpenStax 许可，该教材不得用于训练大型语言模型，也不得纳入大型语言模型或生成式 AI 产品。",
+  },
 });
 
 export const readingMaterialsBatch4: ReadingMaterial[] = [

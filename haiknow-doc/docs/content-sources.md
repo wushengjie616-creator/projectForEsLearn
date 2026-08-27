@@ -39,7 +39,7 @@
 
 后三篇出自 Project Gutenberg 的《Cuentos de la Alhambra》西语纯文本。书目页记录 Washington Irving、译者 Luis Lamarca、语言 Spanish 与 eBook 编号 52262；[BVFE 译者记录](https://www.bvfe.es/es/autor/10043-lamarca-luis.html)记载 Lamarca 生卒年为 1793–1850，[Biblioteca Virtual Miguel de Cervantes](https://www.cervantesvirtual.com/obra-visor/cuentos-de-la-alhambra-de-washington-irving-en-traduccin-de-luis-lamarca-1833-0/html/01d1d618-82b2-11df-acc7-002185ce6064_2.html)与[西语 Wikisource 扫描索引](https://es.wikisource.org/wiki/%C3%8Dndice:Cuentos_de_la_Alhambra_%281833%29.pdf)共同确认该西译本为 1833 年 Luis Lamarca 译本。作者和译者去世年代为公版判断提供了强证据，但对外再分发仍应按服务司法辖区复核；Project Gutenberg 自身只明确声明美国公版。
 
-OpenStax 三篇来自 Rice University 旗下开放教材页面。页面逐篇列出作者、出版日期和 Creative Commons Attribution License，并要求数字再分发时在每个页面视图显示“Acceso gratuito en …”归属语句；平台已把该语句作为结构化字段显示在对应详情页。页面同时声明不得将教材用于训练大语言模型或摄入生成式 AI 产品；本站用途是为用户建设阅读学习页面，不把这些文本用于模型训练。
+OpenStax 三篇来自 Rice University 旗下开放教材页面。页面逐篇列出作者、出版日期和 Creative Commons Attribution License，并要求数字再分发时在每个页面视图显示“Acceso gratuito en …”归属语句；平台已把该语句作为结构化字段显示在对应详情页。页面同时声明不得未经许可将教材用于训练大语言模型或纳入生成式 AI 产品。本站已对三篇 OpenStax 材料关闭可点击单词，并在服务端点词接口调用 DeepSeek 前按材料 slug 再次拒绝；详情页将这段内容明确标为“OpenStax 原始说明（中文概述）”并链接对应 OpenStax 页面。该措施约束平台提供的 DeepSeek 流程，不声称能够阻止用户在站外自行复制文本。
 
 三篇欧盟材料的许可依据来自欧盟西语法律声明：除单独声明外，欧盟自有网页内容采用 CC BY 4.0，允许在适当注明来源并说明改动时再利用。本站只收录欧盟官方页面的纯文字段落，未复制欧盟徽标、照片、商标或潜在第三方内容；原文头和学习页均注明权利主体与来源，编辑说明同时列明选择、省略、空格或 HTML 规范化改动。环境页主动排除已过 2020 时间节点的目标段，农业页主动排除缺少就地出处的预测和就业数字。
 
@@ -72,4 +72,4 @@ INTEF《Los alimentos y las estaciones》也沿用该资源的作者、制作人
 
 ## 代码位置
 
-带来源头的完整原文保存在 `content/raw/`，哈希、字节数和处理状态记录于 `content/corpus-manifest.json`；网页学习数据位于 `src/content/readings.ts` 及分批文件 `src/content/readings-batch-*.ts`。当前仍使用静态 TypeScript 数据，尚未迁移到数据库，也没有内容管理后台。
+带来源头的完整原文保存在 `content/raw/`，规范 LF 字节数、SHA-256 和处理状态记录于 `content/corpus-manifest.json`；`.gitattributes` 固定原文为 LF，测试会在 Windows 上先规范换行再核对清单。网页学习数据位于 `src/content/readings.ts` 及分批文件 `src/content/readings-batch-*.ts`。当前仍使用静态 TypeScript 数据，尚未迁移到数据库，也没有内容管理后台。

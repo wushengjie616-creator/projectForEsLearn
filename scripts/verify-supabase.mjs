@@ -29,7 +29,7 @@ function getInputValue(html, name) {
 }
 
 const env = readEnvFile(".env.local");
-const registry = JSON.parse(fs.readFileSync("src/config/invite-users.json", "utf8"));
+const registry = JSON.parse(fs.readFileSync(".local/invite-users.json", "utf8"));
 const privateRegistry = JSON.parse(fs.readFileSync(".local/invite-codes.json", "utf8"));
 const userId = registry.users[0]?.id;
 const inviteCode = privateRegistry.codes.find((entry) => entry.id === userId)?.code;

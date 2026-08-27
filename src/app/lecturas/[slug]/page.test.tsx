@@ -51,14 +51,19 @@ describe("reading detail page", () => {
     ]);
   });
 
-  it("renders the required OpenStax digital attribution", async () => {
-    const page = await ReadingPage({
-      params: Promise.resolve({ slug: "la-quimica-en-la-vida-cotidiana" }),
-    });
+  it.each([
+    "la-quimica-en-la-vida-cotidiana",
+    "modelos-teorias-y-leyes-cientificas",
+    "procesos-espontaneos-y-no-espontaneos",
+  ])("renders the OpenStax AI-use notice and removes DeepSeek word controls for %s", async (slug) => {
+    const page = await ReadingPage({ params: Promise.resolve({ slug }) });
     const html = renderToStaticMarkup(page);
 
+    expect(html).toContain("OpenStax 原始说明");
+    expect(html).toContain("本站因此关闭本材料的 DeepSeek 功能");
     expect(html).toContain("Acceso gratuito en https://openstax.org/books/");
     expect(html).toContain("CC BY 4.0");
+    expect(html).not.toContain("data-spanish-word");
   });
 
   it("renders the UNESCO derivative-work notice", async () => {

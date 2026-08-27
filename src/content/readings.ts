@@ -71,6 +71,11 @@ export type ReadingMaterial = {
     translationNote: string;
     requiredAttribution?: string;
     derivativeNotice?: string;
+    deepSeekPolicy?: {
+      enabled: false;
+      statementUrl: string;
+      statementSummaryZh: string;
+    };
   };
 };
 
@@ -281,6 +286,10 @@ export const readingDifficultyAssessments: Record<string, string> = {
 
 export function getReadingBySlug(slug: string): ReadingMaterial | undefined {
   return readingMaterials.find((material) => material.slug === slug);
+}
+
+export function isReadingDeepSeekEnabled(slug: string): boolean {
+  return getReadingBySlug(slug)?.source.deepSeekPolicy?.enabled !== false;
 }
 
 export function getDifficultyRationale(material: ReadingMaterial): string {

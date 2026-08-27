@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
@@ -11,6 +12,22 @@ import {
 } from "./readings";
 
 describe("reading material repository", () => {
+  it("keeps the corpus manifest byte counts and hashes aligned with canonical LF source files", () => {
+    const manifest = JSON.parse(readFileSync("content/corpus-manifest.json", "utf8")) as {
+      items: Array<{ id: string; path: string; bytes: number; sha256: string }>;
+    };
+
+    expect(manifest.items).toHaveLength(24);
+    for (const item of manifest.items) {
+      const canonicalText = readFileSync(item.path, "utf8").replace(/\r\n?/g, "\n");
+      const canonicalBytes = Buffer.from(canonicalText, "utf8");
+      const sha256 = createHash("sha256").update(canonicalBytes).digest("hex");
+
+      expect(canonicalBytes.byteLength, `${item.id} byte count`).toBe(item.bytes);
+      expect(sha256, `${item.id} SHA-256`).toBe(item.sha256);
+    }
+  });
+
   it("stores twenty-four attributed readings with aligned Chinese translations", () => {
     expect(readingMaterials).toHaveLength(24);
 

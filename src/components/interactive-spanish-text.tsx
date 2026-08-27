@@ -8,6 +8,8 @@ import { getContextWindow, tokenizeSpanish } from "@/lib/spanish/tokenize";
 
 type InteractiveSpanishTextProps = {
   text: string;
+  sourceReadingSlug?: string;
+  deepSeekEnabled?: boolean;
 };
 
 type TranslationState =
@@ -16,7 +18,11 @@ type TranslationState =
   | { status: "success"; translation: WordTranslation }
   | { status: "error"; word: string; message: string; code?: string };
 
-export function InteractiveSpanishText({ text }: InteractiveSpanishTextProps) {
+export function InteractiveSpanishText({
+  text,
+  sourceReadingSlug,
+  deepSeekEnabled = true,
+}: InteractiveSpanishTextProps) {
   const tokens = tokenizeSpanish(text);
   const cache = useRef(new Map<string, WordTranslation>());
   const [state, setState] = useState<TranslationState>({ status: "idle" });
@@ -35,7 +41,7 @@ export function InteractiveSpanishText({ text }: InteractiveSpanishTextProps) {
       const response = await fetch("/api/translate-word", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ word, context }),
+        body: JSON.stringify({ word, context, sourceReadingSlug }),
       });
       const payload = (await response.json()) as {
         translation?: WordTranslation;
@@ -66,7 +72,7 @@ export function InteractiveSpanishText({ text }: InteractiveSpanishTextProps) {
     <div className="min-w-0 flex-1">
       <p lang="es" className="font-[family-name:var(--font-serif)] text-xl leading-9 text-[#173b35]">
         {tokens.map((token, index) =>
-          token.isWord ? (
+          token.isWord && deepSeekEnabled ? (
             <button
               key={`${token.start}-${index}`}
               type="button"
